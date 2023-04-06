@@ -1,0 +1,21 @@
+// import PropTypes from "prop-types";
+import "../assets/css/beerCard.css";
+
+function BeerCard({ beer }) {
+  console.log(beer);
+  return (
+    <div className="beer-card">
+      {beer.image_url && (
+        <img src={beer.image_url} alt={beer.name} className="beer-img" />
+      )}
+      <h1>{beer.name}</h1>
+      <p>{beer.description}</p>
+    </div>
+  );
+}
+
+export default BeerCard;
+
+// BeerCard.PropTypes = {
+//   beer: PropTypes.object,
+// };
