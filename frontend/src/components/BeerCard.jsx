@@ -1,10 +1,9 @@
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import "../assets/css/beerCard.css";
 
 function BeerCard({ beer }) {
-  console.log(beer);
   return (
-    <div className="beer-card">
+    <div className="beerCard">
       {beer.image_url && (
         <img src={beer.image_url} alt={beer.name} className="beer-img" />
       )}
@@ -16,6 +15,10 @@ function BeerCard({ beer }) {
 
 export default BeerCard;
 
-// BeerCard.PropTypes = {
-//   beer: PropTypes.object,
-// };
+BeerCard.propTypes = {
+  beer: PropTypes.shape({
+    image_url: PropTypes.string,
+    name: PropTypes.string,
+    description: PropTypes.string,
+  }).isRequired,
+};
