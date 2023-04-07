@@ -1,0 +1,8 @@
+.beer-card {
+  background-color: var(--main-text-color);
+}
+
+.beer-img {
+  width: 100px;
+  height: 100px;
+}
