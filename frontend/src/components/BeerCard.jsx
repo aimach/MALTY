@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import "../assets/css/beerCard.css";
 
 function BeerCard({ beer }) {
-  console.log(beer);
   return (
     <div className="beer-card">
       {beer.image_url && (
