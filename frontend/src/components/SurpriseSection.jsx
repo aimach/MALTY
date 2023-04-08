@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../assets/css/formSection.css";
+import "../assets/css/surpriseSection.css";
 import BeerCard from "./BeerCard";
 
 function FormSection() {
@@ -16,7 +16,7 @@ function FormSection() {
   }, [surprise]);
 
   return (
-    <div className="form-section">
+    <div className="surprise-section">
       <button type="button" onClick={() => setSurprise(!surprise)}>
         Surprise-me !
       </button>

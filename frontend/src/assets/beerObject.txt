@@ -1,0 +1,80 @@
+abv: 5.3
+attenuation_level: 77
+boil_volume: {unit: "litres", value: 25}
+brewers_tips: "Be as accurate as possible when weighing out your malts to ensure you strike the right balance."
+contributed_by: "Sam Mason <samjbmason>"
+description: "Running the knife-edge between an India Pale Ale and a Stout, this particular style is one we truly love. Black IPAs are a great showcase for the skill of our brew team, balancing so many complex and twisting flavours in the same moment. The citrus, mango and pine from the hops – three of our all-time favourites – play off against the roasty dryness from the malt bill at each and every turn."
+ebc: 200
+first_brewed: "12/2015"
+food_pairing: [
+0:"King prawn kebabs",   
+1: "Halibut with a mango and tomato salad",
+2: "Mint chocloate ice cream"
+]
+ibu: 60
+id: 12
+image_url: "https://images.punkapi.com/v2/12.png"
+ingredients: {
+hops: [
+0: {name: 'Simcoe', amount: {…}, add: 'start', attribute: 'bitter'}
+1: {name: 'Simcoe', amount: {…}, add: 'middle', attribute: 'flavour'}
+2: {name: 'Simcoe', amount: {…}, add: 'end', attribute: 'flavour'}
+3: {name: 'Amarillo', amount: {…}, add: 'end', attribute: 'flavour'}
+4: {name: 'Citra', amount: {…}, add: 'end', attribute: 'flavour'}
+5: {name: 'Simcoe', amount: {…}, add: 'dry hop', attribute: 'aroma'}
+6: {name: 'Amarillo', amount: {…}, add: 'dry hop', attribute: 'aroma'}
+7: {name: 'Citra', amount: {…}, add: 'dry hop', attribute: 'aroma'}
+], 
+malt: [
+0: {name: 'Pale Ale', amount: {…}}
+1: {name: 'Caramalt', amount: {…}}
+2: {name: 'Crystal 150', amount: {…}}
+3: {name: 'Carafa Special Malt Type 1', amount: {…}}
+],
+yeast: "Wyeast 1056 - American Ale™",
+},
+method: {
+
+}
+fermentation: 
+{
+temp: {value: 19, unit: 'celsius'}, 
+mash_temp: [
+  {duration : null, 
+  temp: {value: 65, unit: 'celsius'}}
+], 
+twist:
+
+}
+
+
+twist
+: 
+null
+[[Prototype]]
+: 
+Object
+name
+: 
+"Arcade Nation"
+ph
+: 
+4.2
+srm
+: 
+100
+tagline
+: 
+"Seasonal Black IPA."
+target_fg
+: 
+1012
+target_og
+: 
+1052
+volume
+: 
+{value: 20, unit: 'litres'}
+[[Prototype]]
+: 
+Object

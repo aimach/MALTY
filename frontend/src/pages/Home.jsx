@@ -2,7 +2,7 @@ import Title from "../components/Title";
 import Navbar from "../components/Navbar";
 import beerImg from "../assets/img/bottle-caps.jpg";
 import "../assets/css/home.css";
-import FormSection from "../components/FormSection";
+import FormSection from "../components/SurpriseSection";
 
 export default function Home() {
   return (
