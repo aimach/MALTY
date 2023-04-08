@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "../assets/css/searchSection.css";
 import axios from "axios";
 import BeerCard from "./BeerCard";
