@@ -1,10 +1,11 @@
 import React from "react";
 import "../assets/css/navbar.css";
+import logo from "../assets/img/logo.svg";
 
 function Navbar() {
   return (
     <div className="navbar">
-      <h1>MALTY</h1>
+      <img src={logo} alt="matly logo" width="50px" />
       <nav>
         <ul>
           <li>All</li>

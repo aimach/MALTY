@@ -20,7 +20,8 @@ function SearchSection() {
         .get(`https://api.punkapi.com/v2/beers?beer_name=${name}`)
         .then((response) => {
           setBeers(response.data);
-        });
+        })
+        .catch((err) => console.error(err));
     }
   }
 
