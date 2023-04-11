@@ -7,3 +7,15 @@
   height: 47vh;
   overflow: hidden;
 }
+
+.choice-button {
+  display: flex;
+}
+
+.choice-button button {
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  border: none;
+  width: 100%;
+  border-radius: 0%;
+}

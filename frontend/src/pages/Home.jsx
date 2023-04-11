@@ -1,3 +1,4 @@
+import { useState } from "react";
 import SearchSection from "../components/SearchSection";
 import Title from "../components/Title";
 import Navbar from "../components/Navbar";
@@ -12,6 +13,9 @@ export default function Home() {
   // get a random number
   const randomNbr = Math.floor(Math.random() * images.length) + 0;
 
+  // choose nameSearch or surprise
+  const [searchType, setSearchType] = useState("name");
+
   return (
     <div>
       <Navbar />
@@ -19,8 +23,15 @@ export default function Home() {
       <div className="cover-image-container">
         <img src={images[randomNbr]} alt="beer bottle" className="cover-img" />
       </div>
-      <SearchSection />
-      <SurpriseSection />
+      <div className="choice-button">
+        <button type="button" onClick={() => setSearchType("name")}>
+          I already know the beer I want
+        </button>
+        <button type="button" onClick={() => setSearchType("surprise")}>
+          Surprise me please
+        </button>
+      </div>
+      {searchType === "name" ? <SearchSection /> : <SurpriseSection />}
       {/* <p>https://punkapi.com/documentation/v2</p>
       <p>https://dribbble.com/shots/20534330-Case-Study-MOVA-Brewery-Website</p> */}
     </div>

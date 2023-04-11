@@ -30,6 +30,7 @@ function SearchSection() {
       <input
         type="text"
         value={beerName}
+        placeholder="Search by name"
         onChange={(e) => setBeerName(e.target.value)}
       />
       <button type="button" onClick={() => searchByName(beerName)}>
