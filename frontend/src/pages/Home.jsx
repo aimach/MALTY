@@ -3,25 +3,21 @@ import Title from "../components/Title";
 import Navbar from "../components/Navbar";
 import "../assets/css/home.css";
 import SurpriseSection from "../components/SurpriseSection";
-// import beerImg from "../assets/img/beerImg/beer.jpg";
+import image01 from "../assets/img/beerImg/beer.jpg";
+import image02 from "../assets/img/beerImg/bottle-caps.jpg";
 
 export default function Home() {
-  // get all images name
-  const images = import.meta.glob("../assets/img/beerImg/*");
-  // get object length
-  const max = Object.values(images).length - 1;
+  // get all images name in an array
+  const images = [image01, image02];
   // get a random number
-  const randomNbr = Math.floor(Math.random() * (max - 0 + 1)) + 0;
-  // get random img name
-  // const beerImg = `src/${Object.values(images)[randomNbr].name}`;
-  const beerImg = Object.values(images)[randomNbr].name;
+  const randomNbr = Math.floor(Math.random() * images.length) + 0;
 
   return (
     <div>
       <Navbar />
       <Title />
-      <div>
-        <img src={beerImg} alt="beer bottle" className="cover-img" />
+      <div className="cover-image-container">
+        <img src={images[randomNbr]} alt="beer bottle" className="cover-img" />
       </div>
       <SearchSection />
       <SurpriseSection />

@@ -1,3 +1,9 @@
 .cover-img {
   width: 100%;
 }
+
+.cover-image-container {
+  background-color: var(--main-bg-color);
+  height: 47vh;
+  overflow: hidden;
+}
