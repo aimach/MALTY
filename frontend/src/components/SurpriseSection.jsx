@@ -18,7 +18,7 @@ function FormSection() {
   return (
     <div className="surprise-section">
       <button type="button" onClick={() => setSurprise(!surprise)}>
-        Surprise-me !
+        Get a random beer
       </button>
       {randomBeer && <BeerCard beer={randomBeer} />}
     </div>
