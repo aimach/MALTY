@@ -14,7 +14,6 @@
 }
 
 .cover-image-container button {
-  background-color: var(--main-bg-color);
   color: var(--main-text-color);
   font-size: 1.25rem;
   width: 50vw;

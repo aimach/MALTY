@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Title from "../components/Title";
 import Navbar from "../components/Navbar";
 import "../assets/css/home.css";
@@ -8,7 +9,9 @@ export default function Home() {
       <Navbar />
       <Title />
       <div className="cover-image-container">
-        <button type="button">Browse all beer</button>
+        <Link to="/all">
+          <button type="button">Browse all beer</button>
+        </Link>
         <button type="button">Surprise me !</button>
       </div>
       {/* <p>https://punkapi.com/documentation/v2</p>
