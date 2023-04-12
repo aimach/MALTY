@@ -1,4 +1,5 @@
 .background-letters {
+  word-break: break-all;
   font-size: 9rem;
   font-weight: bold;
   opacity: 0.3;
@@ -6,10 +7,11 @@
   z-index: 1;
   color: #d2d7ca;
   text-overflow: clip;
-  white-space: nowrap;
   overflow: hidden;
   width: 90vw;
-  margin-top: 6rem;
+  height: 50vh;
+  text-align: center;
+  font-family: "Tilt Warp", serif;
 }
 
 .beer-card {
@@ -28,12 +30,15 @@
 
 .beer-card h1 {
   font-size: 2rem;
+  font-family: "Tilt Warp", serif;
+  z-index: 2;
 }
 
 .beer-card p {
   text-align: justify;
   height: 9.5vh;
   overflow: hidden;
+  z-index: 2;
 }
 
 .beer-img {
