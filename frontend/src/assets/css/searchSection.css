@@ -1,5 +1,5 @@
 .results-section {
-  height: 80vh;
+  height: 75vh;
   overflow: scroll;
 }
 
@@ -11,7 +11,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  margin: 0.5rem;
+  margin: 1rem;
   border-radius: 1rem;
 }
 

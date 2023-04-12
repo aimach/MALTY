@@ -1,0 +1,17 @@
+.about {
+  height: 100vh;
+  background-color: black;
+}
+
+.about-section {
+  background-color: var(--main-text-color);
+  color: var(--main-bg-color);
+  height: 80vh;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  border-radius: 1rem;
+}
