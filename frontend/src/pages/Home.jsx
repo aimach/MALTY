@@ -17,7 +17,7 @@ export default function Home() {
   const [searchType, setSearchType] = useState("name");
 
   return (
-    <div>
+    <div className="home">
       <Navbar />
       <Title />
       <div className="cover-image-container">
