@@ -1,6 +1,7 @@
 .navbar {
   color: var(--main-text-color);
-  height: 5vh;
+  background-color: var(--main-bg-color);
+  height: 7vh;
   padding: 1rem;
   display: flex;
   justify-content: space-between;

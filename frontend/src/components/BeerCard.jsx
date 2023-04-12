@@ -5,13 +5,14 @@ import noImg from "../assets/img/no_img_beer.png";
 function BeerCard({ beer }) {
   return (
     <div className="beer-card">
+      <h1>{beer.name.toUpperCase()}</h1>
       <img
         src={beer.image_url ? beer.image_url : noImg}
         alt={beer.name}
         className="beer-img"
       />
-      <h1>{beer.name}</h1>
       <p>{beer.description}</p>
+      <div className="background-letters">{beer.name.toUpperCase()}</div>
     </div>
   );
 }
