@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import SearchForm from "@components/SearchForm";
+import SearchForm from "./components/SearchForm";
 import Home from "./pages/Home";
 import All from "./pages/All";
 import About from "./pages/About";
@@ -12,9 +12,8 @@ function App() {
   const [results, setResults] = useState([]);
 
   return (
-    <ResultsContext.Provider
-      value={{ results: results, setResults: setResults }}
-    >
+    // eslint-disable-next-line react/jsx-no-constructed-context-values
+    <ResultsContext.Provider value={{ results, setResults }}>
       <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />

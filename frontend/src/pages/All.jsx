@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useContext } from "react";
-import Navbar from "@components/Navbar";
+import React, { useState, useEffect } from "react";
+import Navbar from "../components/Navbar";
 import "../assets/css/all.css";
-import BeerCard from "@components/BeerCard";
+import BeerCard from "../components/BeerCard";
 
 function All() {
   const [beers, setBeers] = useState([]);
