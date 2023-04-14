@@ -28,6 +28,9 @@ function Navbar() {
       </Link>
       <nav>
         <ul>
+          <Link to="/search">
+            <li>Search</li>
+          </Link>
           <Link to="/all">
             <li>All</li>
           </Link>
