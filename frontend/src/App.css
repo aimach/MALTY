@@ -3,6 +3,7 @@
 body {
   --main-bg-color: #14312c;
   --main-text-color: #fbf7ef;
+  box-sizing: border-box;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 

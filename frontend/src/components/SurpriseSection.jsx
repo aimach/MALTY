@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import "../assets/css/surpriseSection.css";
-import BeerCard from "./BeerCard";
+import CompleteBeerCard from "./CompleteBeerCard";
 
 function SurpriseSection({ setSurpriseModale }) {
-  // https://api.punkapi.com/v2/beers/random
-
   const [randomBeer, setRandomBeer] = useState("");
 
   useEffect(() => {
@@ -17,10 +15,12 @@ function SurpriseSection({ setSurpriseModale }) {
 
   return (
     <div className="surprise-section">
-      {randomBeer && <BeerCard beer={randomBeer} />}
-      <button type="button" onClick={() => setSurpriseModale(false)}>
-        Back
-      </button>
+      {randomBeer && (
+        <CompleteBeerCard
+          beer={randomBeer}
+          setSurpriseModale={setSurpriseModale}
+        />
+      )}
     </div>
   );
 }
