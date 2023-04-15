@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-expressions */
-import React, { useRef, useState } from "react";
-// import axios from "axios";
+import React, { useContext, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import Navbar from "./Navbar";
-// import ResultsContext from "../context/ResultsContext";
+import ResultsContext from "../context/ResultsContext";
 import "../assets/css/searchForm.css";
 import pale from "../assets/img/beerImg/pale.svg";
 import blonde from "../assets/img/beerImg/blonde.svg";
@@ -18,18 +19,12 @@ import deepBitter from "../assets/img/deepBitter.svg";
 
 function SearchForm() {
   // create a state for results
-  // const { setResults } = useContext(ResultsContext);
-
-  // create array with years since Brewdog beginnings
-  const d = new Date().getFullYear(); // get actual year
-  const years = []; // initialize array
-  for (let i = 2008; i <= d; i += 1) {
-    years.push(`01-${i}`);
-  }
+  const { setResults } = useContext(ResultsContext);
 
   // create a ref and a state for alcohol degree
   const inputEl = useRef(null);
   const [degree, setDegree] = useState();
+  const navigate = useNavigate();
 
   // create a color array
   const colorArr = [
@@ -115,31 +110,30 @@ function SearchForm() {
           break;
       }
     }
-    // year
-    formJson.brewed_after !== "" &&
-      (endpoint += `brewed_after=${formJson.brewed_after}`);
 
     // get datas
-    // axios
-    //   .get(endpoint)
-    //   .then((response) => {
-    //     setResults(response.data);
-    //   })
-    //   .catch((err) => console.error(err));
+    axios
+      .get(`${endpoint}per_page=80`)
+      .then((response) => {
+        setResults(response.data);
+      })
+      .catch((err) => console.error(err));
+    navigate("/search/results");
   }
 
   return (
     <>
       <Navbar />
       <form method="post" onSubmit={handleSubmit} className="search-form">
-        <div className="form-example">
-          <label htmlFor="beer_name">Name</label>
-          <input
-            type="text"
-            name="beer_name"
-            id="beer_name"
-            placeholder="Search by name"
-          />
+        <div className="name-section">
+          <label htmlFor="beer_name">
+            <input
+              type="text"
+              name="beer_name"
+              id="beer_name"
+              placeholder="Search by name"
+            />
+          </label>
         </div>
         <div className="abv-section">
           <label htmlFor="abv">
@@ -157,55 +151,47 @@ function SearchForm() {
             />
           </label>
         </div>
-        <div>
+        <div className="ibu-section">
           {bitterArr.map((bitterness) => {
             return (
               <label htmlFor={bitterness.name} key={bitterness.name}>
-                <img
-                  src={bitterness.src}
-                  alt={`${bitterness.name} logo`}
-                  width="50px"
-                />
                 <input
                   type="radio"
                   id={bitterness.name}
                   name="ibu"
                   value={bitterness.name}
                 />
+                <img
+                  src={bitterness.src}
+                  alt={`${bitterness.name} logo`}
+                  className="bitter-logo"
+                />
               </label>
             );
           })}
         </div>
-        <div>
+        <div className="ebc-section">
           {colorArr.map((color) => {
             return (
               <label htmlFor={color.name} key={color.name}>
-                <img src={color.src} alt={`${color.name} logo`} width="50px" />
                 <input
                   type="radio"
                   id={color.name}
                   name="ebc"
                   value={color.name}
                 />
+                <img
+                  src={color.src}
+                  alt={`${color.name} logo`}
+                  className="color-logo"
+                />
               </label>
             );
           })}
         </div>
-        <div className="form-example">
-          <label htmlFor="brewed_after">First brewed : </label>
-          <select name="brewed_after" id="brewed_after">
-            <option value="">--Please choose a year--</option>
-            {years.map((year) => {
-              const yearOnly = year.slice(3);
-              return (
-                <option key={year} value={year}>
-                  {yearOnly}
-                </option>
-              );
-            })}
-          </select>
-        </div>
-        <button type="submit">Give me beers</button>
+        <button type="submit" className="submit-button">
+          Give me beers
+        </button>
       </form>
     </>
   );
