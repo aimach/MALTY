@@ -48,9 +48,14 @@
 }
 
 .beer-text-section h1 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-family: "Tilt Warp", serif;
   z-index: 2;
+}
+
+.beer-text-section h3 {
+  font-size: 1.2rem;
+  font-family: "Tilt Warp", serif;
 }
 
 .beer-text-section p {
@@ -66,8 +71,16 @@
 
 .hopAndMalt {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .back-button {
   z-index: 2;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
 }
