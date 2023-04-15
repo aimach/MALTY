@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import SurpriseSection from "@components/SurpriseSection";
+import SurpriseSection from "../components/SurpriseSection";
 import Title from "../components/Title";
 import Navbar from "../components/Navbar";
 import "../assets/css/home.css";
@@ -16,7 +16,7 @@ export default function Home() {
           <button type="button">Browse all beer</button>
         </Link>
         <button type="button" onClick={() => setSurpriseModale(true)}>
-          Surprise me !
+          Surprise me!
         </button>
       </div>
       {surpriseModale && (
