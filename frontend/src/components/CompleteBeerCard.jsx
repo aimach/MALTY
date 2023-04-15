@@ -53,8 +53,16 @@ CompleteBeerCard.propTypes = {
   beer: PropTypes.shape({
     tagline: PropTypes.string,
     ingredients: PropTypes.shape({
-      hops: PropTypes.object,
-      malt: PropTypes.object,
+      hops: PropTypes.shape([
+        {
+          name: PropTypes.string,
+        },
+      ]),
+      malt: PropTypes.shape([
+        {
+          name: PropTypes.string,
+        },
+      ]),
     }),
     image_url: PropTypes.string,
     name: PropTypes.string,
