@@ -36,9 +36,11 @@
 
 .beer-card p {
   text-align: justify;
-  height: 9.5vh;
+  display: -webkit-box;
+  max-width: 300px;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  z-index: 2;
 }
 
 .beer-img {

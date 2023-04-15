@@ -5,6 +5,22 @@ import hopImg from "../assets/img/hop.png";
 import maltImg from "../assets/img/malt.png";
 
 function CompleteBeerCard({ beer, setSurpriseModale }) {
+  // console.log(beer);
+
+  // remove double from hop array
+  const hopsArrWithDouble = [];
+  beer.ingredients.hops.forEach((hop) => {
+    hopsArrWithDouble.push(hop.name);
+  });
+  const hopsArr = Array.from(new Set(hopsArrWithDouble));
+
+  // remove double from malt array
+  const maltArrWithDouble = [];
+  beer.ingredients.malt.forEach((malt) => {
+    maltArrWithDouble.push(malt.name);
+  });
+  const maltArr = Array.from(new Set(maltArrWithDouble));
+
   return (
     <>
       <div className="beer-img-section">
@@ -13,7 +29,7 @@ function CompleteBeerCard({ beer, setSurpriseModale }) {
           className="back-button"
           onClick={() => setSurpriseModale(false)}
         >
-          Back
+          X
         </button>
         <img
           src={beer.image_url ? beer.image_url : noImg}
@@ -26,18 +42,24 @@ function CompleteBeerCard({ beer, setSurpriseModale }) {
       <div className="beer-text-section">
         <h1>{beer.name.toUpperCase()}</h1>
         <h3>{beer.tagline}</h3>
-        <p>{beer.first_brewed}</p>
+        <div className="details">
+          {beer.abv && <p>{beer.abv} degrees</p>}
+          {beer.ibu && <p>IBU {beer.ibu}</p>}
+          {beer.ebc && <p>EBC {beer.ebc}</p>}
+        </div>
         <div className="hopAndMalt">
+          <img src={hopImg} alt="hop logo" width="30px" />
           <ul>
-            <img src={hopImg} alt="hop logo" width="30px" />
-            {beer.ingredients.hops.map((hop) => (
-              <li key={hop.id}>{hop.name}</li>
+            {hopsArr.map((hop, index) => (
+              // eslint-disable-next-line react/no-array-index-key
+              <li key={index}>{hop}</li>
             ))}
           </ul>
+          <img src={maltImg} alt="malt logo" width="30px" />
           <ul>
-            <img src={maltImg} alt="malt logo" width="30px" />
-            {beer.ingredients.malt.map((malt) => (
-              <li key={malt.id}>{malt.name}</li>
+            {maltArr.map((malt, index) => (
+              // eslint-disable-next-line react/no-array-index-key
+              <li key={index}>{malt}</li>
             ))}
           </ul>
         </div>
@@ -51,6 +73,9 @@ export default CompleteBeerCard;
 
 CompleteBeerCard.propTypes = {
   beer: PropTypes.shape({
+    abv: PropTypes.number,
+    ibu: PropTypes.number,
+    ebc: PropTypes.number,
     tagline: PropTypes.string,
     ingredients: PropTypes.shape({
       hops: PropTypes.shape([
@@ -67,7 +92,6 @@ CompleteBeerCard.propTypes = {
     image_url: PropTypes.string,
     name: PropTypes.string,
     description: PropTypes.string,
-    first_brewed: PropTypes.string,
   }).isRequired,
   setSurpriseModale: PropTypes.func.isRequired,
 };
