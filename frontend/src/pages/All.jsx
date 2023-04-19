@@ -19,8 +19,10 @@ function All() {
   return (
     <div className="all-section">
       <Navbar />
-      {beers.length &&
-        beers.map((beer) => <BeerCard beer={beer} key={beer.id} />)}
+      <div className="desktop-position-all">
+        {beers.length &&
+          beers.map((beer) => <BeerCard beer={beer} key={beer.id} />)}
+      </div>
       <div className="button-section">
         {page > 1 && (
           <button type="button" onClick={() => setPage(page - 1)}>

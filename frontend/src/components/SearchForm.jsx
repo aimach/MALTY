@@ -124,7 +124,7 @@ function SearchForm() {
   return (
     <>
       <Navbar />
-      <div className="desktop-position">
+      <div className="desktop-position-form">
         <form method="post" onSubmit={handleSubmit} className="search-form">
           <div className="name-section">
             <label htmlFor="beer_name">
