@@ -10,14 +10,16 @@ export default function Home() {
   return (
     <div className="home">
       <Navbar />
-      <Title />
-      <div className="cover-image-container">
-        <Link to="/all">
-          <button type="button">Browse all beer</button>
-        </Link>
-        <button type="button" onClick={() => setSurpriseModale(true)}>
-          Surprise me!
-        </button>
+      <div className="desktop-position">
+        <Title />
+        <div className="cover-image-container">
+          <Link to="/all">
+            <button type="button">Browse all beer</button>
+          </Link>
+          <button type="button" onClick={() => setSurpriseModale(true)}>
+            Surprise me!
+          </button>
+        </div>
       </div>
       {surpriseModale && (
         <SurpriseSection setSurpriseModale={setSurpriseModale} />
