@@ -1,0 +1,11 @@
+.title {
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  height: 40vh;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 0 1.5rem 1.5rem;
+}

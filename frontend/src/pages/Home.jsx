@@ -1,36 +1,29 @@
-import Counter from "../components/Counter";
-import logo from "../assets/logo.svg";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import SurpriseSection from "../components/SurpriseSection";
+import Title from "../components/Title";
+import Navbar from "../components/Navbar";
+import "../assets/css/home.css";
 
 export default function Home() {
+  const [surpriseModale, setSurpriseModale] = useState(false);
   return (
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>Hello Vite + React !</p>
-
-      <Counter />
-
-      <p>
-        Edit <code>App.jsx</code> and save to test HMR updates.
-      </p>
-      <p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        {" | "}
-        <a
-          className="App-link"
-          href="https://vitejs.dev/guide/features.html"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Vite Docs
-        </a>
-      </p>
-    </header>
+    <div className="home">
+      <Navbar />
+      <Title />
+      <div className="cover-image-container">
+        <Link to="/all">
+          <button type="button">Browse all beer</button>
+        </Link>
+        <button type="button" onClick={() => setSurpriseModale(true)}>
+          Surprise me!
+        </button>
+      </div>
+      {surpriseModale && (
+        <SurpriseSection setSurpriseModale={setSurpriseModale} />
+      )}
+      {/* <p>https://punkapi.com/documentation/v2</p>
+      <p>https://dribbble.com/shots/20534330-Case-Study-MOVA-Brewery-Website</p> */}
+    </div>
   );
 }

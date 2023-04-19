@@ -1,0 +1,51 @@
+.background-letters {
+  word-break: break-all;
+  font-size: 9rem;
+  font-weight: bold;
+  opacity: 0.3;
+  position: absolute;
+  z-index: 1;
+  color: #d2d7ca;
+  text-overflow: clip;
+  overflow: hidden;
+  width: 90vw;
+  height: 50vh;
+  text-align: center;
+  font-family: "Tilt Warp", serif;
+}
+
+.beer-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  gap: 2rem;
+  font-size: 1.25rem;
+  background-color: var(--main-text-color);
+  color: var(--main-bg-color);
+  height: 50vh;
+}
+
+.beer-card h1 {
+  font-size: 2rem;
+  font-family: "Tilt Warp", serif;
+  z-index: 2;
+}
+
+.beer-card p {
+  text-align: justify;
+  display: -webkit-box;
+  max-width: 300px;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.beer-img {
+  height: 200px;
+  padding: 1rem;
+  border-radius: 1rem;
+  z-index: 2;
+}

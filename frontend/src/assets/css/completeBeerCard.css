@@ -1,0 +1,86 @@
+.background-letters-img {
+  word-break: break-all;
+  font-size: 9rem;
+  font-weight: bold;
+  opacity: 0.2;
+  position: absolute;
+  z-index: 1;
+  width: 90vw;
+  height: 45vh;
+  text-align: center;
+  font-family: "Tilt Warp", serif;
+  overflow: hidden;
+}
+
+.beer-img-surprise {
+  height: 300px;
+  padding: 1rem;
+  border-radius: 1rem;
+  z-index: 2;
+  transform: rotate(20deg);
+}
+
+.beer-img-section {
+  background-color: var(--main-bg-color);
+  width: 90vw;
+  height: 94vh;
+  border-radius: 0 0 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.beer-text-section {
+  background-color: var(--main-text-color);
+  color: var(--main-bg-color);
+  width: 90vw;
+  min-height: 52vh;
+  margin-top: 1rem;
+  padding: 2rem;
+  border-radius: 1rem 1rem 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: scroll;
+  box-sizing: border-box;
+  gap: 1rem;
+}
+
+.beer-text-section h1 {
+  font-size: 2rem;
+  font-family: "Tilt Warp", serif;
+  z-index: 2;
+}
+
+.beer-text-section h3 {
+  font-size: 1.2rem;
+  font-family: "Tilt Warp", serif;
+}
+
+.beer-text-section p {
+  text-align: justify;
+  z-index: 2;
+  font-size: 1.25rem;
+}
+
+.beer-text-section ul {
+  z-index: 2;
+  font-size: 1.25rem;
+}
+
+.hopAndMalt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.back-button {
+  z-index: 2;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}

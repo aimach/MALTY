@@ -1,0 +1,17 @@
+.all-section {
+  background-color: var(--main-bg-color);
+}
+
+.button-section {
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+.button-section button {
+  border: 1px solid var(--main-text-color);
+  color: var(--main-text-color);
+  border-radius: 1rem;
+  margin: 0 1rem;
+}
