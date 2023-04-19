@@ -124,75 +124,77 @@ function SearchForm() {
   return (
     <>
       <Navbar />
-      <form method="post" onSubmit={handleSubmit} className="search-form">
-        <div className="name-section">
-          <label htmlFor="beer_name">
-            <input
-              type="text"
-              name="beer_name"
-              id="beer_name"
-              placeholder="Search by name"
-            />
-          </label>
-        </div>
-        <div className="abv-section">
-          <label htmlFor="abv">
-            <p>{degree}° max</p>
-            <input
-              ref={inputEl}
-              type="range"
-              id="abv"
-              name="abv"
-              min="0"
-              max="55"
-              step="1"
-              onChange={() => setDegree(inputEl.current.value)}
-              className="range"
-            />
-          </label>
-        </div>
-        <div className="ibu-section">
-          {bitterArr.map((bitterness) => {
-            return (
-              <label htmlFor={bitterness.name} key={bitterness.name}>
-                <input
-                  type="radio"
-                  id={bitterness.name}
-                  name="ibu"
-                  value={bitterness.name}
-                />
-                <img
-                  src={bitterness.src}
-                  alt={`${bitterness.name} logo`}
-                  className="bitter-logo"
-                />
-              </label>
-            );
-          })}
-        </div>
-        <div className="ebc-section">
-          {colorArr.map((color) => {
-            return (
-              <label htmlFor={color.name} key={color.name}>
-                <input
-                  type="radio"
-                  id={color.name}
-                  name="ebc"
-                  value={color.name}
-                />
-                <img
-                  src={color.src}
-                  alt={`${color.name} logo`}
-                  className="color-logo"
-                />
-              </label>
-            );
-          })}
-        </div>
-        <button type="submit" className="submit-button">
-          Give me beers
-        </button>
-      </form>
+      <div className="desktop-position">
+        <form method="post" onSubmit={handleSubmit} className="search-form">
+          <div className="name-section">
+            <label htmlFor="beer_name">
+              <input
+                type="text"
+                name="beer_name"
+                id="beer_name"
+                placeholder="Search by name"
+              />
+            </label>
+          </div>
+          <div className="abv-section">
+            <label htmlFor="abv">
+              <p>{degree}° max</p>
+              <input
+                ref={inputEl}
+                type="range"
+                id="abv"
+                name="abv"
+                min="0"
+                max="55"
+                step="1"
+                onChange={() => setDegree(inputEl.current.value)}
+                className="range"
+              />
+            </label>
+          </div>
+          <div className="ibu-section">
+            {bitterArr.map((bitterness) => {
+              return (
+                <label htmlFor={bitterness.name} key={bitterness.name}>
+                  <input
+                    type="radio"
+                    id={bitterness.name}
+                    name="ibu"
+                    value={bitterness.name}
+                  />
+                  <img
+                    src={bitterness.src}
+                    alt={`${bitterness.name} logo`}
+                    className="bitter-logo"
+                  />
+                </label>
+              );
+            })}
+          </div>
+          <div className="ebc-section">
+            {colorArr.map((color) => {
+              return (
+                <label htmlFor={color.name} key={color.name}>
+                  <input
+                    type="radio"
+                    id={color.name}
+                    name="ebc"
+                    value={color.name}
+                  />
+                  <img
+                    src={color.src}
+                    alt={`${color.name} logo`}
+                    className="color-logo"
+                  />
+                </label>
+              );
+            })}
+          </div>
+          <button type="submit" className="submit-button">
+            Give me beers
+          </button>
+        </form>
+      </div>
     </>
   );
 }
