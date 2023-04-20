@@ -7,13 +7,6 @@ function SearchSection() {
   const [beers, setBeers] = useState();
   const [beerName, setBeerName] = useState("");
 
-  // useEffect(() => {
-  //   fetch("https://api.punkapi.com/v2/beers/random")
-  //     .then((response) => response.json())
-  //     .then((data) => setRandomBeer(data[0]))
-  //     .catch((err) => console.error(err));
-  // }, []);
-
   function searchByName(name) {
     if (name !== "") {
       axios

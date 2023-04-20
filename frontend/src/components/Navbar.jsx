@@ -26,19 +26,6 @@ function Navbar() {
       <Link to="/">
         <img src={logo} alt="matly logo" width="50px" />
       </Link>
-      <nav>
-        <ul>
-          <Link to="/search">
-            <li>Search</li>
-          </Link>
-          <Link to="/all">
-            <li>All</li>
-          </Link>
-          <Link to="/about">
-            <li>About</li>
-          </Link>
-        </ul>
-      </nav>
     </div>
   );
 }

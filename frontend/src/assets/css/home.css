@@ -22,3 +22,18 @@
   border-radius: 25px;
   border: 0.5px solid var(--main-text-color);
 }
+
+@media screen and (min-width: 768px) {
+  .desktop-position {
+    display: flex;
+  }
+
+  .cover-image-container {
+    background-size: cover;
+    height: 89vh;
+    width: 50vw;
+  }
+  .cover-image-container button {
+    width: 20vw;
+  }
+}

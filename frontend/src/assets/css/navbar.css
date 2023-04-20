@@ -10,6 +10,7 @@
   top: 0px;
   transition-timing-function: ease-in;
   transition: 0.5s;
+  box-shadow: -6px -1px 5px #000000;
 }
 
 .navbar ul {
@@ -21,6 +22,8 @@
   text-decoration: none;
   color: var(--main-text-color);
   font-size: 1.5rem;
+  padding: 1rem;
+  border-radius: 1rem;
 }
 
 .hidden-navbar {

@@ -7,6 +7,7 @@ import About from "./pages/About";
 import "./App.css";
 import ResultsContext from "./context/ResultsContext";
 import ResultsPage from "./pages/ResultsPage";
+import Navbar from "./components/Navbar";
 
 function App() {
   // declare state results for context
@@ -16,6 +17,7 @@ function App() {
   return (
     <ResultsContext.Provider value={resultsSet}>
       <div className="App">
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/all" element={<All />} />

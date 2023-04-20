@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../components/Navbar";
 import BeerCard from "../components/BeerCard";
 import "../assets/css/all.css";
 
@@ -18,9 +17,10 @@ function All() {
   }, [page]);
   return (
     <div className="all-section">
-      <Navbar />
-      {beers.length &&
-        beers.map((beer) => <BeerCard beer={beer} key={beer.id} />)}
+      <div className="desktop-position-all">
+        {beers.length &&
+          beers.map((beer) => <BeerCard beer={beer} key={beer.id} />)}
+      </div>
       <div className="button-section">
         {page > 1 && (
           <button type="button" onClick={() => setPage(page - 1)}>
